@@ -4,18 +4,23 @@ on:
   push:
     branches: [ Development ]
 
-jobs:
-  CI_Test_And_Build:
-    runs-on: ubuntu-latest
+  jobs:
+    test_and_build:
 
-    steps:
-      - name: Checkout del código
+      runs-on: ubuntu-latest
+
+      steps:
+		
+        - name: Hacemos Checkuot del repo de Git
         uses: actions/checkout@v2
-
-      - name: Configurar JDK 8
+		
+        - name: Set up JDK 8
         uses: actions/setup-java@v1
         with:
           java-version: 8
 
-      - name: Ejecutar pruebas
+        - name: Test project with Maven
         run: mvn -B test
+		  
+        - name: Build project with Maven
+        run: mvn -B package 
