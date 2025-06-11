@@ -17,5 +17,5 @@ jobs:
         with:
           java-version: 8
 
-      - name: Ejecutar pruebas con maven
+      - name: Ejecutar pruebas commit
         run: mvn -B test
