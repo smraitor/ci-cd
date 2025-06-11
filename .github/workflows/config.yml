@@ -1,9 +1,0 @@
-on:
-  push:
-    branches:
-      - master
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    environment:
-      my_env: 123
